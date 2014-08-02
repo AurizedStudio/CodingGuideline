@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>コーディングガイドライン - オーライズドスタジオ(Aurized studio)</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="オーライズドスタジオにてコーディングする場合の基本的なルール。適宜アップデートされます。">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="normalize.css">
+<script src="html5shiv.js"></script>
+<style type="text/css">
+<!--
+body {
+    padding: 10px;
+}
+.update {
+    text-align: right;
+}
+.table tr,
+.table td {
+    padding: 4px;
+    border: 1px #000 solid;
+}   
+-->
+</style>
+</head>
+
+<body>
+<h1>コーディングガイドライン </h1>
+<p class="update">2015/8/3 Aurized Studio（須崎 武）</p>
+<h2>文字コード</h2>
+<p>原則 UTF-8。</p>
+<h2>改行コード</h2>
+<p>原則 CR+LF(Windows)。</p>
+<h2>DOCTYPE</h2>
+<p>基本的にはHTML5。</p>
+<p>もしくは、XHTML1.0 Transitional または HTML4.01 Transitional。</p>
+<h2>バリデート</h2>
+<p>W3Cが勧告するHTML5の仕様に準拠します。<br>
+    以下のバリデータでエラー無しを目指します。<br>
+    <a href="http://validator.w3.org/">http://validator.w3.org/</a></p>
+<h2>改行とインデント</h2>
+<p>ソースの改行は、ブロック要素の終了タグの後ろ等、適宜行います。<br>
+    body内の要素には、構造に合わせて適切にインデントします。<br>
+    インデントには半角スペース４つ分を使用。</p>
+<h2>パスの記述</h2>
+<p>原則としてサイト内リンク、画像リンク共に相対パス（ドキュメント）。</p>
+<h2>&lt;title&gt;タグ</h2>
+<p>トップページのタイトルには、サイト名としてサイトや会社の名前を載せることに加え、会社の所在地、主要な取扱商品などの重要な情報を含める。<br>
+    ２階層目以降は、基本的にはページ名、サイト名の順に「 | 」（半角スペース＋半角縦棒＋半角スペース）で区切ります。<br>
+    例：ページ名 | サイト名</p>
+<h2>&lt;meta＞タグのkeywords</h2>
+<p>キーワード毎に半角カンマ「,」で区切ります。</p>
+<h2>&lt;hX&gt;タグ</h2>
+<p>&lt;h1&gt;は特に指定なければ、Topページではサイトタイトル、ロゴなどに使用し、その他のページではページ固有のタイトルにあたるテキスト or img要素に対して使用します。</p>
+<h2>&lt;img&gt;タグ</h2>
+<p>意味のある画像は、原則背景ではなくimg要素として配置します。（文書を補完する画像、単独で内容を説明している画像、メインイメージなど）<br>
+    alt属性にて画像の代替となるテキストを設定します。（特に指定がない場合は、その画像の簡易説明をaltの内容とします。電話でその画像の説明をする感じです。装飾用の画像など、相応しい代替テキストが存在しない画像の場合には「alt=&quot;&quot;」とします） </p>
+<h2>&lt;div&gt;タグ</h2>
+<p>ソースの内容を把握しやすいようにするために、class、id付きの閉じ&lt;/div&gt;タグの後ろに適宜コメントを入れます。<br>
+    例：<br>
+&lt;/div&gt;<br>
+&lt;!-- / #header --&gt;</p>
+<h2>&lt;input&gt;、&lt;textarea&gt;、&lt;select&gt;タグ</h2>
+<p>id属性に対してスタイルを適用しません。id属性は変更されることを考慮して、class属性を使用してスタイルを適用します。</p>
+<h2>チェックボックスとラジオボタン</h2>
+<p>&lt;label for=&quot;任意値&quot;&gt;と対応したid属性を必須とします。<br>
+    例：&lt;label for=&quot;example01&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;example01&quot; /&gt;ラベル&lt;/label&gt;</p>
+<h2>フォント、フォントファミリー</h2>
+<p>単位は「px」または「em」を使用します。</p>
+<p>指定無ければ次のフォントで記述します。<br>
+    font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;</p>
+<h2>カラーコード</h2>
+<p>小文字で３桁表示可能な場合は３桁で記述します。<br>
+    例：#fff, #f89, #5a5b5c</p>
+<h2>id名、class名</h2>
+<p>文書構造上、意味のある名前にします。<br>
+    必要な場合は必要な数のハイフン「-」を使用し、末尾に２桁の連番を付けます。<br>
+    連番の中で詳細がある場合はハイフン「-」に続けて記載します。<br>
+    例：<br>
+    wrapper（全体を囲む枠）<br>
+    wrapper-inner（全体を囲む枠の内側枠）<br>
+    wrapper-outer （全体を囲む枠の外側枠） <br>
+    header（ヘッダー）<br>
+    utility（メインのナビではない項目のメニューなど）<br>
+    g-nav（グローバルナビゲーション）<br>
+    gnav（グローバルナビゲーション）<br>
+    sub-nav（サブナビゲーション）<br>
+    subnav（サブナビゲーション）<br>
+    content（コンテンツ枠）<br>
+    main（メインコンテンツ枠）<br>
+    sub（サブコンテンツ枠）<br>
+    copyright （著作項目要素） <br>
+    footer（フッター）<br>
+    list-basic01, list-basic02, list-basic03<br>
+    icon01, icon02, icon03<br>
+    tableselect01, tableselect02, tableselect03, tableselect03-inner, tableselect04</p>
+<h2>決めているclass名</h2>
+<p>ボタン等の状態を変化させるときのクラス名：&quot;○○--hoge&quot;<br>
+    js等で状態変化させるときのクラス名：&quot;is-fuga&quot;<br>
+    ある要素の外側要素：&quot;その要素名-outer&quot;<br>
+    ある要素の内側要素：&quot;その要素名-inner&quot;</p>
+<h2>ショートハンドプロパティ</h2>
+<p>marginやpaddingはショートハンドを使います。（個別の継承を考えなくてもよいため）<br>
+    例：margin-bottom: 2px; -&gt; margin: 0 0 2px 0;</p>
+<h2>画像ファイル名</h2>
+<p>識別名+「-」+「ページ名orカテゴリ名orセクション名」+「-」+「詳細」+連番２桁.拡張子<br>
+    （「ページ名orカテゴリ名orセクション名」、「詳細」は不要の場合省略します。連番は２つ以上ファイルが存在する場合に付けます。）<br>
+    例：<br>
+    title-topic01.gif<br>
+    bg-main-table01.png</p>
+<p>識別名一覧</p>
+<table class="table">
+    <tr>
+        <td>識別名</td>
+        <td>用途</td>
+        <td>サンプル</td>
+    </tr>
+    <tr>
+        <td>bg</td>
+        <td>背景用に使用する画像</td>
+        <td>bg-header.png<br>
+            bg-main-table01.gif<br>
+            bg-main-table02.gif</td>
+    </tr>
+    <tr>
+        <td>btn</td>
+        <td>ボタンとして使用する画像</td>
+        <td>btn-gnav01.gif<br>
+            btn-goods-item01.png</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>上記ボタンのマウスオーバーやアクティブ画像</td>
+        <td>btn-gnav01-ov.png(マウスオーバー)<br>
+            btn-gnav01-cr.png(アクティブ)</td>
+    </tr>
+    <tr>
+        <td>item</td>
+        <td>アイコンやポイントとして使用する画像</td>
+        <td>item-arrow01.gif<br>
+            item-pdf.gif</td>
+    </tr>
+    <tr>
+        <td>bnr</td>
+        <td>バナーとして使用する画像</td>
+        <td>bnr-sub01.png</td>
+    </tr>
+    <tr>
+        <td>h1〜h6</td>
+        <td>&lt;h1&gt;タグなどの見出しタグで使用される画像</td>
+        <td>h1-logo.png</td>
+    </tr>
+    <tr>
+        <td>title</td>
+        <td>&lt;hx&gt;以外で使用されるタイトル用の画像</td>
+        <td>title-topic01.png</td>
+    </tr>
+    <tr>
+        <td>txt</td>
+        <td>デザイン上、画像化するテキスト画像</td>
+        <td>txt-explain01.gif</td>
+    </tr>
+    <tr>
+        <td>pic</td>
+        <td>写真用の画像</td>
+        <td>pic-face01.jpg</td>
+    </tr>
+    <tr>
+        <td>img</td>
+        <td>写真以外のイラストや表などの画像</td>
+        <td>img-table01.gif</td>
+    </tr>
+</table>
+<h2>表示確認ブラウザ</h2>
+<p>基本的には、Chrome最新版、Firefox最新版、Safari最新版、IE8〜とします。<br>
+    <br>
+</p>
+</body>
+</html>
